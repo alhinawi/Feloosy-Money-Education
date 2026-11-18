@@ -11,7 +11,19 @@ import { X } from 'lucide-react'
 import { useApp } from '../lib/store'
 import { t } from '../lib/i18n'
 import { apiGetAuthConfig, apiLogin, apiRegister, googleLoginUrl } from '../lib/api'
+import { Button } from './ui/button'
 import { completeSignIn, signOut, useAuth } from '../lib/auth'
+
+function GoogleMark() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-4 w-4" aria-hidden="true">
+      <path fill="#4285F4" d="M23.5 12.3c0-.9-.1-1.5-.3-2.2H12v4.1h6.4c-.1 1.1-.8 2.7-2.4 3.8l-.02.15 3.5 2.7.24.03c2.2-2.05 3.5-5.07 3.5-8.55z" />
+      <path fill="#34A853" d="M12 24c3.24 0 5.96-1.07 7.94-2.9l-3.79-2.93c-1.01.7-2.37 1.2-4.15 1.2-3.17 0-5.86-2.13-6.82-5.06l-.14.01-3.09 2.39-.04.14C3.87 21.3 7.61 24 12 24z" />
+      <path fill="#FBBC05" d="M5.18 14.31A7.4 7.4 0 0 1 4.78 12c0-.8.14-1.58.36-2.31l-.01-.16-3.13-2.43-.1.05A12 12 0 0 0 0 12c0 1.94.47 3.77 1.29 5.4l3.9-3.09z" />
+      <path fill="#EA4335" d="M12 4.6c2.34 0 3.92 1.01 4.82 1.86l3.52-3.44C18.19 1.08 15.24 0 12 0 7.61 0 3.87 2.7 1.9 6.6l3.83 2.97C6.14 6.73 8.83 4.6 12 4.6z" />
+    </svg>
+  )
+}
 
 export default function AuthModal({ open, onClose }: { open: boolean; onClose: () => void }) {
   const { lang } = useApp()
@@ -126,12 +138,12 @@ export default function AuthModal({ open, onClose }: { open: boolean; onClose: (
               </button>
             </form>
             {google && (
-              <a
-                href={googleLoginUrl()}
-                className="mt-3 block rounded-xl border border-sand-200 px-4 py-2 text-center font-medium hover:bg-sand-100 dark:border-brand-700 dark:hover:bg-brand-900"
-              >
-                {t(lang, 'loginGoogle')}
-              </a>
+              <Button asChild variant="outline" className="mt-3 w-full">
+                <a href={googleLoginUrl()}>
+                  <GoogleMark />
+                  {t(lang, 'loginGoogle')}
+                </a>
+              </Button>
             )}
             <button
               type="button"
