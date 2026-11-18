@@ -29,7 +29,7 @@ export const useApp = create<AppState>()(
   persist(
     (set) => ({
       lang: 'ar',
-      theme: 'system',
+      theme: 'dark',
       done: [],
       scores: {},
       setLang: (lang) => set({ lang }),
