@@ -29,11 +29,31 @@ function theme(
     btnClass?: string
   },
 ): ThemeDef {
+  // Semantic shadcn tokens are declared `@theme inline`, so utilities reference
+  // var(--background) etc. directly: override BOTH spellings on the wrapper.
+  const semantic: Vars = {
+    '--background': p.bg,
+    '--foreground': p.fg,
+    '--card': p.card,
+    '--card-foreground': p.fg,
+    '--border': p.border,
+    '--input': p.border,
+    '--muted': p.card,
+    '--muted-foreground': p.mutedFg,
+    '--secondary': p.card,
+    '--secondary-foreground': p.secondaryFg,
+    '--accent': p.accent,
+    '--accent-foreground': p.accentFg,
+    '--primary': p.primary,
+    '--primary-foreground': p.primaryFg,
+    '--ring': p.primary,
+  }
   return {
     name,
     headingClass: p.headingClass,
     btnClass: p.btnClass,
     vars: {
+      ...semantic,
       '--color-background': p.bg,
       '--color-foreground': p.fg,
       '--color-card': p.card,
@@ -79,9 +99,9 @@ const AMBER_H = '[&_h1]:[background-image:linear-gradient(180deg,#fdeec8_0%,#f6d
 const THEMES: ThemeDef[] = [
   { name: 'الأسود والذهبي (الحالي)', vars: {} },
   theme('الزمردي والذهبي', {
-    bg: '#071009', card: '#0c1a12', border: '#1e3a29', fg: '#f2f5ef', mutedFg: '#9db8a4', secondaryFg: '#cde6d2',
-    accent: '#143324', accentFg: '#f1dc8f', primary: '#d4af37', primaryFg: '#1f1603',
-    brand900: '#0f2417', brand100: '#d8ecd9', brand700: '#2f6b45',
+    bg: '#081a10', card: '#0d2b1a', border: '#25603f', fg: '#f0f7f1', mutedFg: '#a3c9b2', secondaryFg: '#cdeeda',
+    accent: '#14532d', accentFg: '#f1dc8f', primary: '#d4af37', primaryFg: '#1f1603',
+    brand900: '#134529', brand100: '#d9efe0', brand700: '#2e7d4f',
     g300: '#f1dc8f', g400: '#e6c655', g500: '#d4af37', g600: '#a8851c',
   }),
   theme('الكحلي والبلاتين', {
