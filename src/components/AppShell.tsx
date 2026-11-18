@@ -63,7 +63,7 @@ export default function AppShell({ children }: { children: ReactNode }) {
           >
             <Menu className="h-5 w-5" />
           </button>
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2 rtl:ms-auto md:rtl:ms-0">
             <Logo />
             <span className="flex flex-col leading-none">
               <span className="font-head text-xl font-bold text-brand-800 dark:text-gold-300">Feloosy</span>

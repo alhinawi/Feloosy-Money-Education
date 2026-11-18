@@ -72,10 +72,10 @@
 }
 
 .dark {
-  --background: #0c0a06;
-  --foreground: #f0e7cf;
-  --card: #171309;
-  --card-foreground: #f0e7cf;
+  --background: #0b0a07;
+  --foreground: #f7f4ea;
+  --card: #14110a;
+  --card-foreground: #f7f4ea;
   --primary: #d4af37;
   --primary-foreground: #1f1603;
   --secondary: #241d0c;
@@ -102,8 +102,20 @@
 
   .dark body {
     background:
-      radial-gradient(1200px 500px at 80% -10%, rgb(212 175 55 / 0.07), transparent 60%),
+      radial-gradient(900px 420px at 15% -5%, rgb(212 175 55 / 0.06), transparent 55%),
+      radial-gradient(1100px 500px at 85% 110%, rgb(212 175 55 / 0.05), transparent 60%),
+      repeating-linear-gradient(115deg, rgb(255 255 255 / 0.012) 0 2px, transparent 2px 6px),
       var(--background);
+  }
+
+  /* glossy metallic 3D gold headings in dark mode */
+  .dark h1, .dark h2 {
+    background: linear-gradient(180deg, #f9e79a 0%, #eecf6d 30%, #c9a227 55%, #96741a 78%, #d4af37 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    padding-bottom: 0.18em;
+    filter: drop-shadow(0 1px 0 rgb(0 0 0 / 0.6)) drop-shadow(0 0 16px rgb(212 175 55 / 0.22));
   }
 
   h1, h2, h3 {

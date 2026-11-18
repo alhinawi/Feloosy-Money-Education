@@ -14,7 +14,7 @@ import AppShell from '../components/AppShell'
 const SITE_URL = 'https://feloosy.pages.dev'
 
 /** Applies the saved theme before first paint, so dark mode does not flash. */
-const THEME_BOOT_SCRIPT = `try{var s=(JSON.parse(localStorage.getItem('feloosy:v1')||'{}').state)||{};var t=s.theme||'system';if(t==='dark'||(t==='system'&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}`
+const THEME_BOOT_SCRIPT = `try{var s=(JSON.parse(localStorage.getItem('feloosy:v1')||'{}').state)||{};var t=s.theme||'dark';if(t==='dark'||(t==='system'&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}`
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
