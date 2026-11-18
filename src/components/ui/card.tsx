@@ -10,7 +10,7 @@ function CardHeader({ className, ...props }: React.ComponentProps<'div'>) {
 }
 
 function CardTitle({ className, ...props }: React.ComponentProps<'h3'>) {
-  return <h3 className={cn('font-head text-lg font-bold leading-none', className)} {...props} />
+  return <h3 className={cn('font-head text-lg font-bold leading-[1.5]', className)} {...props} />
 }
 
 function CardDescription({ className, ...props }: React.ComponentProps<'p'>) {
