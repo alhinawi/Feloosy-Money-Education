@@ -5,6 +5,9 @@ import '@fontsource/el-messiri/arabic-600.css'
 import '@fontsource/el-messiri/arabic-700.css'
 import '@fontsource/el-messiri/latin-600.css'
 import '@fontsource/el-messiri/latin-700.css'
+import '@fontsource-variable/playfair-display'
+import '@fontsource/amiri/arabic-400.css'
+import '@fontsource/amiri/arabic-700.css'
 import './globals.css'
 import AppShell from '../components/AppShell'
 
@@ -28,7 +31,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#0e3d2c',
+  themeColor: '#231a05',
   width: 'device-width',
   initialScale: 1,
   viewportFit: 'cover',

@@ -21,7 +21,7 @@ export default function GlossaryPage() {
 
   return (
     <div className="mx-auto max-w-3xl">
-      <h1 className="mb-2 flex items-center gap-2 text-3xl font-bold text-palm-900 dark:text-gold-300">
+      <h1 className="mb-2 flex items-center gap-2 text-3xl font-bold text-brand-900 dark:text-gold-300">
         <BookOpenText className="h-8 w-8" />
         {t(lang, 'glossaryTitle')}
       </h1>
@@ -34,13 +34,13 @@ export default function GlossaryPage() {
           onChange={(e) => setQuery(e.target.value)}
           placeholder={t(lang, 'search')}
           aria-label={t(lang, 'search')}
-          className="w-full rounded-xl border border-sand-200 bg-transparent py-3 pe-4 ps-10 focus:outline-none focus:ring-0 dark:border-palm-700"
+          className="w-full rounded-xl border border-sand-200 bg-transparent py-3 pe-4 ps-10 focus:outline-none focus:ring-0 dark:border-brand-700"
         />
       </div>
 
       <div className="flex flex-col gap-3">
         {terms.map((term) => (
-          <details key={term.en} className="card group p-4 open:shadow-sm">
+          <details key={term.en} className="rounded-[1.25rem] border border-border bg-card text-card-foreground shadow-sm group p-4 open:shadow-sm">
             <summary className="flex cursor-pointer list-none items-center justify-between gap-2 font-bold [&::-webkit-details-marker]:hidden">
               <span>{lang === 'ar' ? term.ar : term.en}</span>
               <span className="text-sm font-medium text-stone-400 transition-transform group-open:rotate-90">

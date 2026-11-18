@@ -32,8 +32,8 @@ export default function Quiz({ id, quiz }: { id: string; quiz: LessonQuiz }) {
   }
 
   return (
-    <section className="card mb-8 p-5" aria-label={t(lang, 'quizTitle')}>
-      <h2 className="mb-4 flex items-center gap-2 text-xl font-bold text-palm-900 dark:text-gold-300">
+    <section className="rounded-[1.25rem] border border-border bg-card text-card-foreground shadow-sm mb-8 p-5" aria-label={t(lang, 'quizTitle')}>
+      <h2 className="mb-4 flex items-center gap-2 text-xl font-bold text-brand-900 dark:text-gold-300">
         <HelpCircle className="h-6 w-6" />
         {t(lang, 'quizTitle')}
       </h2>
@@ -48,8 +48,8 @@ export default function Quiz({ id, quiz }: { id: string; quiz: LessonQuiz }) {
                 const wasPicked = picked[qi] === oi
                 const revealed = picked[qi] !== null
                 const isAnswer = oi === q.answer
-                let cls = 'border-sand-200 hover:border-palm-400 dark:border-palm-700'
-                if (revealed && isAnswer) cls = 'border-palm-500 bg-palm-50 dark:bg-palm-900'
+                let cls = 'border-sand-200 hover:border-brand-400 dark:border-brand-700'
+                if (revealed && isAnswer) cls = 'border-brand-500 bg-brand-50 dark:bg-brand-900'
                 else if (revealed && wasPicked) cls = 'border-red-400 bg-red-50 dark:bg-red-950/30'
                 return (
                   <button
@@ -60,7 +60,7 @@ export default function Quiz({ id, quiz }: { id: string; quiz: LessonQuiz }) {
                     className={`flex items-center justify-between gap-2 rounded-xl border px-4 py-2.5 text-start font-medium transition-colors ${cls}`}
                   >
                     <span>{opt}</span>
-                    {revealed && isAnswer && <CheckCircle2 className="h-5 w-5 shrink-0 text-palm-600 dark:text-gold-400" />}
+                    {revealed && isAnswer && <CheckCircle2 className="h-5 w-5 shrink-0 text-brand-600 dark:text-gold-400" />}
                     {revealed && wasPicked && !isAnswer && <XCircle className="h-5 w-5 shrink-0 text-red-500" />}
                   </button>
                 )
@@ -70,7 +70,7 @@ export default function Quiz({ id, quiz }: { id: string; quiz: LessonQuiz }) {
         ))}
       </div>
       {answeredAll && (
-        <div className="mt-4 flex items-center justify-between rounded-xl bg-sand-100 px-4 py-3 dark:bg-palm-900">
+        <div className="mt-4 flex items-center justify-between rounded-xl bg-sand-100 px-4 py-3 dark:bg-brand-900">
           <p className="font-bold">
             {t(lang, 'quizScore')}: <span className="num">{fmtNum(pct)}%</span>
             {best !== undefined && (
@@ -82,7 +82,7 @@ export default function Quiz({ id, quiz }: { id: string; quiz: LessonQuiz }) {
           <button
             type="button"
             onClick={() => setPicked(questions.map(() => null))}
-            className="flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-bold text-palm-700 hover:bg-sand-200 dark:text-gold-300 dark:hover:bg-palm-800"
+            className="flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-bold text-brand-700 hover:bg-sand-200 dark:text-gold-300 dark:hover:bg-brand-800"
           >
             <RotateCcw className="h-4 w-4" />
             {t(lang, 'quizRetry')}

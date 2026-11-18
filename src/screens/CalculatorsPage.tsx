@@ -18,7 +18,7 @@ function Field({ label, value, onChange, min = 0, max }: { label: string; value:
         max={max}
         value={Number.isFinite(value) ? value : ''}
         onChange={(e) => onChange(e.target.value === '' ? 0 : Number(e.target.value))}
-        className="num rounded-xl border border-sand-200 bg-transparent px-3 py-2 text-start dark:border-palm-700"
+        className="num rounded-xl border border-sand-200 bg-transparent px-3 py-2 text-start dark:border-brand-700"
       />
     </label>
   )
@@ -26,7 +26,7 @@ function Field({ label, value, onChange, min = 0, max }: { label: string; value:
 
 function ResultRow({ label, value, strong }: { label: string; value: number; strong?: boolean }) {
   return (
-    <div className={`flex items-center justify-between rounded-xl px-4 py-2 ${strong ? 'bg-palm-100 font-bold text-palm-900 dark:bg-palm-900 dark:text-gold-300' : 'bg-sand-100 dark:bg-palm-950'}`}>
+    <div className={`flex items-center justify-between rounded-xl px-4 py-2 ${strong ? 'bg-brand-100 font-bold text-brand-900 dark:bg-brand-900 dark:text-gold-300' : 'bg-sand-100 dark:bg-brand-950'}`}>
       <span>{label}</span>
       <span className="num">{fmtNum(Math.round(value))} EGP</span>
     </div>
@@ -49,11 +49,11 @@ export default function CalculatorsPage() {
 
   return (
     <div>
-      <h1 className="mb-2 text-3xl font-bold text-palm-900 dark:text-gold-300">{t(lang, 'calculatorsTitle')}</h1>
+      <h1 className="mb-2 text-3xl font-bold text-brand-900 dark:text-gold-300">{t(lang, 'calculatorsTitle')}</h1>
       <p className="mb-8 text-stone-600 dark:text-stone-300">{t(lang, 'calculatorsSubtitle')}</p>
 
       <div className="grid gap-6 lg:grid-cols-2">
-        <section className="card p-5" aria-label={t(lang, 'calcCompound')}>
+        <section className="rounded-[1.25rem] border border-border bg-card text-card-foreground shadow-sm p-5" aria-label={t(lang, 'calcCompound')}>
           <h2 className="mb-4 text-xl font-bold">{t(lang, 'calcCompound')}</h2>
           <div className="mb-4 grid grid-cols-2 gap-3">
             <Field label={t(lang, 'calcStart')} value={cStart} onChange={setCStart} />
@@ -68,7 +68,7 @@ export default function CalculatorsPage() {
           </div>
         </section>
 
-        <section className="card p-5" aria-label={t(lang, 'calcGoal')}>
+        <section className="rounded-[1.25rem] border border-border bg-card text-card-foreground shadow-sm p-5" aria-label={t(lang, 'calcGoal')}>
           <h2 className="mb-4 text-xl font-bold">{t(lang, 'calcGoal')}</h2>
           <div className="mb-4 grid grid-cols-2 gap-3">
             <Field label={t(lang, 'calcGoalAmount')} value={gGoal} onChange={setGGoal} />
@@ -80,7 +80,7 @@ export default function CalculatorsPage() {
           </div>
         </section>
 
-        <section className="card p-5 lg:col-span-2" aria-label={t(lang, 'calcBudget')}>
+        <section className="rounded-[1.25rem] border border-border bg-card text-card-foreground shadow-sm p-5 lg:col-span-2" aria-label={t(lang, 'calcBudget')}>
           <h2 className="mb-4 text-xl font-bold">{t(lang, 'calcBudget')}</h2>
           <div className="grid gap-4 md:grid-cols-2">
             <Field label={t(lang, 'calcIncome')} value={bIncome} onChange={setBIncome} />

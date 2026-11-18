@@ -64,8 +64,8 @@ export default function AuthModal({ open, onClose }: { open: boolean; onClose: (
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4" role="dialog" aria-modal="true">
       <div className="absolute inset-0 bg-black/40" onClick={onClose} />
-      <div className="card relative w-full max-w-sm p-6">
-        <button type="button" aria-label={t(lang, 'close')} onClick={onClose} className="absolute end-3 top-3 rounded-lg p-1.5 hover:bg-sand-100 dark:hover:bg-palm-900">
+      <div className="rounded-[1.25rem] border border-border bg-card text-card-foreground shadow-sm relative w-full max-w-sm p-6">
+        <button type="button" aria-label={t(lang, 'close')} onClick={onClose} className="absolute end-3 top-3 rounded-lg p-1.5 hover:bg-sand-100 dark:hover:bg-brand-900">
           <X className="h-5 w-5" />
         </button>
 
@@ -96,7 +96,7 @@ export default function AuthModal({ open, onClose }: { open: boolean; onClose: (
                   placeholder={t(lang, 'name')}
                   required
                   minLength={2}
-                  className="rounded-xl border border-sand-200 bg-transparent px-3 py-2 dark:border-palm-700"
+                  className="rounded-xl border border-sand-200 bg-transparent px-3 py-2 dark:border-brand-700"
                 />
               )}
               <input
@@ -105,7 +105,7 @@ export default function AuthModal({ open, onClose }: { open: boolean; onClose: (
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder={t(lang, 'email')}
                 required
-                className="rounded-xl border border-sand-200 bg-transparent px-3 py-2 dark:border-palm-700"
+                className="rounded-xl border border-sand-200 bg-transparent px-3 py-2 dark:border-brand-700"
               />
               <input
                 type="password"
@@ -114,13 +114,13 @@ export default function AuthModal({ open, onClose }: { open: boolean; onClose: (
                 placeholder={t(lang, 'password')}
                 required
                 minLength={8}
-                className="rounded-xl border border-sand-200 bg-transparent px-3 py-2 dark:border-palm-700"
+                className="rounded-xl border border-sand-200 bg-transparent px-3 py-2 dark:border-brand-700"
               />
               {error && <p className="text-sm text-red-600">{error}</p>}
               <button
                 type="submit"
                 disabled={busy}
-                className="rounded-xl bg-palm-700 px-4 py-2 font-bold text-white hover:bg-palm-800 disabled:opacity-60"
+                className="rounded-xl bg-brand-700 px-4 py-2 font-bold text-white hover:bg-brand-800 disabled:opacity-60"
               >
                 {mode === 'login' ? t(lang, 'login') : t(lang, 'signup')}
               </button>
@@ -128,7 +128,7 @@ export default function AuthModal({ open, onClose }: { open: boolean; onClose: (
             {google && (
               <a
                 href={googleLoginUrl()}
-                className="mt-3 block rounded-xl border border-sand-200 px-4 py-2 text-center font-medium hover:bg-sand-100 dark:border-palm-700 dark:hover:bg-palm-900"
+                className="mt-3 block rounded-xl border border-sand-200 px-4 py-2 text-center font-medium hover:bg-sand-100 dark:border-brand-700 dark:hover:bg-brand-900"
               >
                 {t(lang, 'loginGoogle')}
               </a>
@@ -136,7 +136,7 @@ export default function AuthModal({ open, onClose }: { open: boolean; onClose: (
             <button
               type="button"
               onClick={() => setMode(mode === 'login' ? 'signup' : 'login')}
-              className="mt-3 w-full text-center text-sm font-medium text-palm-700 hover:underline dark:text-gold-300"
+              className="mt-3 w-full text-center text-sm font-medium text-brand-700 hover:underline dark:text-gold-300"
             >
               {mode === 'login' ? t(lang, 'signup') : t(lang, 'login')}
             </button>
