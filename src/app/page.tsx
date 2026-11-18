@@ -25,7 +25,7 @@ export default function HomePage() {
     <div className="flex flex-col gap-12">
       <section className="grid items-center gap-6 md:grid-cols-2">
         <div>
-          <h1 className="mb-4 bg-[linear-gradient(100deg,#a8851c_0%,#d4af37_35%,#f6e27a_55%,#d4af37_75%,#a8851c_100%)] bg-clip-text text-transparent dark:bg-[linear-gradient(100deg,#c9a227_0%,#f1dc8f_35%,#fff3c4_55%,#f1dc8f_75%,#c9a227_100%)] text-3xl font-bold leading-snug md:text-4xl">
+          <h1 className="mb-4 bg-[linear-gradient(100deg,#a8851c_0%,#d4af37_35%,#f6e27a_55%,#d4af37_75%,#a8851c_100%)] bg-clip-text text-transparent dark:bg-[linear-gradient(100deg,#c9a227_0%,#f1dc8f_35%,#fff3c4_55%,#f1dc8f_75%,#c9a227_100%)] pb-2 text-3xl font-bold leading-[1.5] md:text-4xl">
             {t(lang, 'heroTitle')}
           </h1>
           <p className="mb-6 leading-relaxed text-stone-600 dark:text-stone-300">{t(lang, 'heroSubtitle')}</p>

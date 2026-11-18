@@ -24,7 +24,7 @@ export default function LessonPage({ trackSlug, lessonSlug }: { trackSlug: strin
       <Link href={`/tracks/${track.slug}/`} className="mb-4 inline-block text-sm font-medium text-brand-700 hover:underline dark:text-gold-300">
         ← {track[lang].title}
       </Link>
-      <h1 className="mb-3 text-3xl font-bold leading-snug text-brand-900 dark:text-gold-300">{text.title}</h1>
+      <h1 className="mb-3 text-3xl font-bold leading-[1.5] text-brand-900 dark:text-gold-300">{text.title}</h1>
       <p className="mb-8 text-lg leading-relaxed text-stone-600 dark:text-stone-300">{text.intro}</p>
 
       <div className="mb-8 flex flex-col gap-6">
