@@ -108,6 +108,8 @@
 
   h1, h2, h3 {
     font-family: var(--font-head);
+    /* generous line-height so Arabic descenders never clip */
+    line-height: 1.5;
   }
 
   /* English digits everywhere numbers are user-facing */
