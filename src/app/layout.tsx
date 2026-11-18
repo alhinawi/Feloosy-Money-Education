@@ -18,14 +18,14 @@ const THEME_BOOT_SCRIPT = `try{var s=(JSON.parse(localStorage.getItem('feloosy:v
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: { default: 'فلوسي - اتعلم الفلوس صح', template: '%s | فلوسي' },
+  title: { default: 'Feloosy | فلوسي - اتعلم الفلوس صح', template: '%s | Feloosy' },
   description:
     'فلوسي بيعلمك أساسيات الفلوس بالعامية المصرية: ميزانية، ادخار، استثمار، دخل جانبي ومشروعك الخاص. محتوى تعليمي صادق من غير وعود ثراء سريع.',
   applicationName: 'فلوسي',
   icons: { icon: '/favicon.svg' },
   manifest: '/manifest.webmanifest',
   openGraph: {
-    siteName: 'فلوسي',
+    siteName: 'Feloosy',
     images: [{ url: '/images/hero.jpg', width: 1280, height: 720 }],
   },
 }
