@@ -16,9 +16,12 @@ interface AppState {
   theme: Theme
   /** Slugs of finished lessons, as "track/lesson". */
   done: string[]
+  /** Best quiz score per lesson id, 0..100. */
+  scores: Record<string, number>
   setLang: (lang: Lang) => void
   setTheme: (theme: Theme) => void
   toggleDone: (id: string) => void
+  recordScore: (id: string, pct: number) => void
   resetProgress: () => void
 }
 
@@ -28,11 +31,14 @@ export const useApp = create<AppState>()(
       lang: 'ar',
       theme: 'system',
       done: [],
+      scores: {},
       setLang: (lang) => set({ lang }),
       setTheme: (theme) => set({ theme }),
       toggleDone: (id) =>
         set((s) => ({ done: s.done.includes(id) ? s.done.filter((x) => x !== id) : [...s.done, id] })),
-      resetProgress: () => set({ done: [] }),
+      recordScore: (id, pct) =>
+        set((s) => ({ scores: { ...s.scores, [id]: Math.max(s.scores[id] ?? 0, Math.round(pct)) } })),
+      resetProgress: () => set({ done: [], scores: {} }),
     }),
     { name: 'feloosy:v1' },
   ),

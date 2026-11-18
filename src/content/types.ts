@@ -29,3 +29,15 @@ export interface Track {
   en: TrackText
   lessons: Lesson[]
 }
+
+export interface QuizQuestion {
+  q: string
+  /** 3 options; `answer` is the index of the correct one. */
+  options: [string, string, string]
+  answer: 0 | 1 | 2
+}
+
+export interface LessonQuiz {
+  ar: QuizQuestion[]
+  en: QuizQuestion[]
+}
