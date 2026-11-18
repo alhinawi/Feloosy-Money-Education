@@ -1,0 +1,12 @@
+{
+  "name": "فلوسي - اتعلم الفلوس صح",
+  "short_name": "فلوسي",
+  "description": "تعليم مالي بالعامية المصرية: ميزانية، ادخار، استثمار، دخل جانبي ومشروعات",
+  "start_url": "/",
+  "display": "standalone",
+  "dir": "rtl",
+  "lang": "ar",
+  "background_color": "#fbf8f1",
+  "theme_color": "#0e3d2c",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}
