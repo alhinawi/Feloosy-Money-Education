@@ -30,7 +30,7 @@ export const useAuth = create<AuthState>()((set) => ({
 }))
 
 // The progress fields mirrored to the account: the same list the store persists.
-const PROGRESS_KEYS = ['lang', 'theme', 'done'] as const
+const PROGRESS_KEYS = ['lang', 'theme', 'done', 'scores'] as const
 
 type ProgressSnapshot = Record<string, unknown>
 
