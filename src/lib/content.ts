@@ -1,5 +1,6 @@
 import type { Track } from '../content/types'
 import { basicsLessons } from '../content/basics'
+import { basicsLessons2 } from '../content/basics2'
 import { savingLessons } from '../content/saving'
 import { investingLessons } from '../content/investing'
 import { sideIncomeLessons } from '../content/sideincome'
@@ -18,7 +19,7 @@ export const TRACKS: Track[] = [
     image: '/images/track-basics.jpg',
     ar: { title: 'أساسيات الفلوس', tagline: 'ميزانية، طوارئ، وديون - الأساس اللي كل حاجة بتتبني عليه' },
     en: { title: 'Money Basics', tagline: 'Budgeting, emergencies and debt - the base everything builds on' },
-    lessons: basicsLessons,
+    lessons: [...basicsLessons, ...basicsLessons2],
   },
   {
     slug: 'saving',
