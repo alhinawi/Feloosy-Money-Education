@@ -6,6 +6,7 @@ import { savingLessons2 } from '../content/saving2'
 import { investingLessons } from '../content/investing'
 import { investingLessons2 } from '../content/investing2'
 import { sideIncomeLessons } from '../content/sideincome'
+import { sideIncomeLessons2 } from '../content/sideincome2'
 import { businessLessons } from '../content/business'
 import { mindsetLessons } from '../content/mindset'
 
@@ -45,7 +46,7 @@ export const TRACKS: Track[] = [
     image: '/images/track-sideincome.jpg',
     ar: { title: 'الدخل الجانبي', tagline: 'مهارة تتعلمها وتبيعها: فريلانس وبيع أونلاين' },
     en: { title: 'Side Income', tagline: 'A skill you learn and sell: freelancing and selling online' },
-    lessons: sideIncomeLessons,
+    lessons: [...sideIncomeLessons, ...sideIncomeLessons2],
   },
   {
     slug: 'business',
