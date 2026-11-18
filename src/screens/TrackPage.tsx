@@ -18,20 +18,20 @@ export default function TrackPage({ slug }: { slug: string }) {
 
   return (
     <div>
-      <Link href="/tracks/" className="mb-4 inline-block text-sm font-medium text-palm-700 hover:underline dark:text-gold-300">
+      <Link href="/tracks/" className="mb-4 inline-block text-sm font-medium text-brand-700 hover:underline dark:text-gold-300">
         ← {t(lang, 'back')}
       </Link>
-      <div className="card mb-6 overflow-hidden">
+      <div className="rounded-[1.25rem] border border-border bg-card text-card-foreground shadow-sm mb-6 overflow-hidden">
         <div className="relative h-44 w-full">
           <Image src={track.image} alt={t(lang, 'imageAlt')} width={1280} height={720} className="h-full w-full object-cover" priority />
         </div>
         <div className="p-5">
           <div className="mb-2 flex items-center gap-3">
-            <span className="rounded-xl bg-palm-100 p-3 text-palm-700 dark:bg-palm-900 dark:text-gold-300">
+            <span className="rounded-xl bg-brand-100 p-3 text-brand-700 dark:bg-brand-900 dark:text-gold-300">
               <TrackIcon icon={track.icon} />
             </span>
             <div>
-              <h1 className="text-2xl font-bold text-palm-900 dark:text-gold-300">{track[lang].title}</h1>
+              <h1 className="text-2xl font-bold text-brand-900 dark:text-gold-300">{track[lang].title}</h1>
               <p className="text-sm text-stone-600 dark:text-stone-300">{track[lang].tagline}</p>
             </div>
           </div>
@@ -46,16 +46,16 @@ export default function TrackPage({ slug }: { slug: string }) {
             <li key={lesson.slug}>
               <Link
                 href={`/tracks/${track.slug}/${lesson.slug}/`}
-                className="card flex items-center gap-4 p-4 transition-shadow hover:shadow-md"
+                className="rounded-[1.25rem] border border-border bg-card text-card-foreground shadow-sm flex items-center gap-4 p-4 transition-shadow hover:shadow-md"
               >
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-sand-100 font-bold text-palm-700 dark:bg-palm-900 dark:text-gold-300 num">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-sand-100 font-bold text-brand-700 dark:bg-brand-900 dark:text-gold-300 num">
                   {i + 1}
                 </span>
                 <div className="flex-1">
                   <h2 className="font-bold">{lesson[lang].title}</h2>
                   <p className="line-clamp-1 text-sm text-stone-500 dark:text-stone-400">{lesson[lang].intro}</p>
                 </div>
-                {isDone && <CheckCircle2 className="h-5 w-5 shrink-0 text-palm-500 dark:text-gold-400" />}
+                {isDone && <CheckCircle2 className="h-5 w-5 shrink-0 text-brand-500 dark:text-gold-400" />}
               </Link>
             </li>
           )

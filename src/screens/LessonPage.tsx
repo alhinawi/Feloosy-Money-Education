@@ -21,10 +21,10 @@ export default function LessonPage({ trackSlug, lessonSlug }: { trackSlug: strin
 
   return (
     <article className="mx-auto max-w-3xl">
-      <Link href={`/tracks/${track.slug}/`} className="mb-4 inline-block text-sm font-medium text-palm-700 hover:underline dark:text-gold-300">
+      <Link href={`/tracks/${track.slug}/`} className="mb-4 inline-block text-sm font-medium text-brand-700 hover:underline dark:text-gold-300">
         ← {track[lang].title}
       </Link>
-      <h1 className="mb-3 text-3xl font-bold leading-snug text-palm-900 dark:text-gold-300">{text.title}</h1>
+      <h1 className="mb-3 text-3xl font-bold leading-snug text-brand-900 dark:text-gold-300">{text.title}</h1>
       <p className="mb-8 text-lg leading-relaxed text-stone-600 dark:text-stone-300">{text.intro}</p>
 
       <div className="mb-8 flex flex-col gap-6">
@@ -36,8 +36,8 @@ export default function LessonPage({ trackSlug, lessonSlug }: { trackSlug: strin
         ))}
       </div>
 
-      <div className="card mb-8 border-r-4 border-r-gold-500 p-5 dark:border-r-gold-400">
-        <h2 className="mb-3 flex items-center gap-2 font-bold text-palm-900 dark:text-gold-300">
+      <div className="rounded-[1.25rem] border border-border bg-card text-card-foreground shadow-sm mb-8 border-r-4 border-r-gold-500 p-5 dark:border-r-gold-400">
+        <h2 className="mb-3 flex items-center gap-2 font-bold text-brand-900 dark:text-gold-300">
           <CheckCircle2 className="h-5 w-5" />
           {t(lang, 'keyPoints')}
         </h2>
@@ -59,9 +59,9 @@ export default function LessonPage({ trackSlug, lessonSlug }: { trackSlug: strin
         <MarkDone id={lessonId(track.slug, lesson.slug)} />
       </div>
 
-      <nav className="flex items-center justify-between gap-3 border-t border-sand-200 pt-4 dark:border-palm-800">
+      <nav className="flex items-center justify-between gap-3 border-t border-sand-200 pt-4 dark:border-brand-800">
         {prev ? (
-          <Link href={`/tracks/${track.slug}/${prev.slug}/`} className="flex items-center gap-1 text-sm font-medium text-palm-700 hover:underline dark:text-gold-300">
+          <Link href={`/tracks/${track.slug}/${prev.slug}/`} className="flex items-center gap-1 text-sm font-medium text-brand-700 hover:underline dark:text-gold-300">
             <PrevIcon className="h-4 w-4" />
             {prev[lang].title}
           </Link>
@@ -69,7 +69,7 @@ export default function LessonPage({ trackSlug, lessonSlug }: { trackSlug: strin
           <span />
         )}
         {next ? (
-          <Link href={`/tracks/${track.slug}/${next.slug}/`} className="flex items-center gap-1 text-sm font-medium text-palm-700 hover:underline dark:text-gold-300">
+          <Link href={`/tracks/${track.slug}/${next.slug}/`} className="flex items-center gap-1 text-sm font-medium text-brand-700 hover:underline dark:text-gold-300">
             {next[lang].title}
             <NextIcon className="h-4 w-4" />
           </Link>
