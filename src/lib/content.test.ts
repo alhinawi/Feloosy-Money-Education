@@ -47,3 +47,27 @@ describe('content integrity', () => {
     expect(getLesson('nope', 'nope')).toBeUndefined()
   })
 })
+
+describe('quizzes', () => {
+  it('every lesson has a quiz with 3 questions in both languages', async () => {
+    const { QUIZZES } = await import('../content/quizzes')
+    for (const { track, lesson } of ALL_LESSONS) {
+      const quiz = QUIZZES[`${track.slug}/${lesson.slug}`]
+      expect(quiz, `missing quiz for ${track.slug}/${lesson.slug}`).toBeDefined()
+      for (const lang of ['ar', 'en'] as const) {
+        expect(quiz[lang]).toHaveLength(3)
+        for (const q of quiz[lang]) {
+          expect(q.options).toHaveLength(3)
+          expect(q.answer).toBeGreaterThanOrEqual(0)
+          expect(q.answer).toBeLessThan(3)
+          expect(new Set(q.options).size).toBe(3)
+        }
+      }
+    }
+  })
+  it('has no orphan quizzes for non-existent lessons', async () => {
+    const { QUIZZES } = await import('../content/quizzes')
+    const valid = new Set(ALL_LESSONS.map(({ track, lesson }) => `${track.slug}/${lesson.slug}`))
+    for (const key of Object.keys(QUIZZES)) expect(valid.has(key), `orphan quiz ${key}`).toBe(true)
+  })
+})

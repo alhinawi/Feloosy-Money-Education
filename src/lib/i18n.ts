@@ -99,6 +99,13 @@ const dict = {
     authNetwork: 'مفيش اتصال بالسيرفر دلوقتي',
     passwordShort: 'كلمة السر لازم 8 حروف على الأقل',
     imageAlt: 'رسم توضيحي',
+    quizTitle: 'اختبر نفسك',
+    quizCorrect: 'صح!',
+    quizWrong: 'لأ، الإجابة الصح: ',
+    quizScore: 'نتيجتك',
+    quizRetry: 'حاول تاني',
+    quizBest: 'أحسن نتيجة',
+
   },
   en: {
     siteName: 'Feloosy',
@@ -193,6 +200,13 @@ const dict = {
     authNetwork: 'Cannot reach the server right now',
     passwordShort: 'Password must be at least 8 characters',
     imageAlt: 'Illustration',
+    quizTitle: 'Test yourself',
+    quizCorrect: 'Correct!',
+    quizWrong: 'No, the right answer: ',
+    quizScore: 'Your score',
+    quizRetry: 'Try again',
+    quizBest: 'Best score',
+
   },
 } as const
 
