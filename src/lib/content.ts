@@ -4,6 +4,7 @@ import { basicsLessons2 } from '../content/basics2'
 import { savingLessons } from '../content/saving'
 import { savingLessons2 } from '../content/saving2'
 import { investingLessons } from '../content/investing'
+import { investingLessons2 } from '../content/investing2'
 import { sideIncomeLessons } from '../content/sideincome'
 import { businessLessons } from '../content/business'
 import { mindsetLessons } from '../content/mindset'
@@ -36,7 +37,7 @@ export const TRACKS: Track[] = [
     image: '/images/track-investing.jpg',
     ar: { title: 'الاستثمار', tagline: 'افهم المخاطرة والعائد، الفايدة المركبة، البورصة والصناديق' },
     en: { title: 'Investing', tagline: 'Understand risk and return, compounding, stocks and funds' },
-    lessons: investingLessons,
+    lessons: [...investingLessons, ...investingLessons2],
   },
   {
     slug: 'side-income',

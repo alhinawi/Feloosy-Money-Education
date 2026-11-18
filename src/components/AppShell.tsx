@@ -59,7 +59,7 @@ export default function AppShell({ children }: { children: ReactNode }) {
             type="button"
             aria-label={t(lang, 'openMenu')}
             onClick={() => setOpen(true)}
-            className="rounded-lg p-2 hover:bg-sand-100 dark:hover:bg-brand-900 md:hidden"
+            className="rounded-lg p-2 text-brand-800 hover:bg-sand-100 dark:text-gold-300 dark:hover:bg-brand-900 md:hidden"
           >
             <Menu className="h-5 w-5" />
           </button>
