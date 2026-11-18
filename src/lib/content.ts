@@ -2,6 +2,7 @@ import type { Track } from '../content/types'
 import { basicsLessons } from '../content/basics'
 import { basicsLessons2 } from '../content/basics2'
 import { savingLessons } from '../content/saving'
+import { savingLessons2 } from '../content/saving2'
 import { investingLessons } from '../content/investing'
 import { sideIncomeLessons } from '../content/sideincome'
 import { businessLessons } from '../content/business'
@@ -27,7 +28,7 @@ export const TRACKS: Track[] = [
     image: '/images/track-saving.jpg',
     ar: { title: 'الادخار', tagline: 'إزاي تحوّش صح: عادات، شهادات، دهب، وأهداف واضحة' },
     en: { title: 'Saving', tagline: 'How to save right: habits, certificates, gold, and clear goals' },
-    lessons: savingLessons,
+    lessons: [...savingLessons, ...savingLessons2],
   },
   {
     slug: 'investing',
