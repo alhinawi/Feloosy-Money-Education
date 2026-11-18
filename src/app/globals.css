@@ -1,0 +1,73 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-body: 'Readex Pro Variable', 'Segoe UI', system-ui, sans-serif;
+  --font-head: 'El Messiri', 'Readex Pro Variable', system-ui, sans-serif;
+  --color-palm-50: #f2f9f5;
+  --color-palm-100: #dff0e6;
+  --color-palm-200: #bfe3cf;
+  --color-palm-300: #8fcdae;
+  --color-palm-400: #57b586;
+  --color-palm-500: #2f9a68;
+  --color-palm-600: #1f7d54;
+  --color-palm-700: #196445;
+  --color-palm-800: #145038;
+  --color-palm-900: #0e3d2c;
+  --color-palm-950: #06281c;
+  --color-gold-300: #ecd27c;
+  --color-gold-400: #dfb945;
+  --color-gold-500: #c9a227;
+  --color-gold-600: #a8851c;
+  --color-sand-50: #fbf8f1;
+  --color-sand-100: #f5efdf;
+  --color-sand-200: #e9dfc4;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-sand-50);
+  color: #1d2b25;
+}
+
+.dark body {
+  background: #0a1f16;
+  color: #e8f2ec;
+}
+
+h1, h2, h3, .font-head {
+  font-family: var(--font-head);
+}
+
+/* English digits everywhere numbers are user-facing */
+.num, input, output {
+  font-variant-numeric: tabular-nums;
+  direction: ltr;
+  unicode-bidi: embed;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid var(--color-sand-200);
+  border-radius: 1.25rem;
+  box-shadow: 0 1px 2px rgb(6 40 28 / 0.05);
+}
+.dark .card {
+  background: #0f2c20;
+  border-color: #1d4534;
+}
+
+.gold-glow {
+  filter: drop-shadow(0 0 18px rgb(201 162 39 / 0.45));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
