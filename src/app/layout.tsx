@@ -22,11 +22,14 @@ export const metadata: Metadata = {
   description:
     'فلوسي بيعلمك أساسيات الفلوس بالعامية المصرية: ميزانية، ادخار، استثمار، دخل جانبي ومشروعك الخاص. محتوى تعليمي صادق من غير وعود ثراء سريع.',
   applicationName: 'فلوسي',
-  icons: { icon: '/favicon.svg' },
+  icons: {
+    icon: [{ url: '/favicon-32-85b02a.png', sizes: '32x32', type: 'image/png' }],
+    apple: [{ url: '/icon-180-85b02a.png', sizes: '180x180', type: 'image/png' }],
+  },
   manifest: '/manifest.webmanifest',
   openGraph: {
     siteName: 'Feloosy',
-    images: [{ url: '/images/hero.jpg', width: 1280, height: 720 }],
+    images: [{ url: '/og-85b02a.png', width: 1200, height: 630 }],
   },
 }
 
