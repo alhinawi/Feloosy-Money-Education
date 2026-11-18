@@ -89,13 +89,13 @@ export default function AppShell({ children }: { children: ReactNode }) {
 
       {open && (
         <div className="fixed inset-0 z-40 md:hidden" role="dialog" aria-modal="true">
-          <div className="absolute inset-0 bg-black/40" onClick={() => setOpen(false)} />
+          <div className="absolute inset-0 bg-black/60" onClick={() => setOpen(false)} />
           <aside
-            className={`absolute top-0 h-full w-72 bg-white p-4 shadow-xl dark:bg-brand-950 ${
+            className={`absolute top-0 h-full w-80 bg-white p-5 shadow-xl dark:bg-black ${
               lang === 'ar' ? 'right-0' : 'left-0'
             }`}
           >
-            <div className="mb-4 flex items-center justify-between">
+            <div className="mb-8 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <Logo />
                 <span className="flex flex-col leading-none">
@@ -103,27 +103,41 @@ export default function AppShell({ children }: { children: ReactNode }) {
               <span className="font-head text-xs text-brand-600 dark:text-gold-300/70">فلوسي</span>
             </span>
               </div>
-              <button type="button" aria-label={t(lang, 'closeMenu')} onClick={() => setOpen(false)} className="rounded-lg p-2 hover:bg-sand-100 dark:hover:bg-brand-900">
+              <button type="button" aria-label={t(lang, 'closeMenu')} onClick={() => setOpen(false)} className="rounded-lg p-2 hover:bg-sand-100 dark:hover:bg-white/5">
                 <X className="h-5 w-5" />
               </button>
             </div>
             <nav className="flex flex-col gap-1">
-              {links.map(({ href, key, icon: Icon }) => (
-                <Link key={href} href={href} className="flex items-center gap-3 rounded-lg px-3 py-2.5 font-medium hover:bg-sand-100 dark:hover:bg-brand-900">
-                  <Icon className="h-5 w-5 text-brand-600 dark:text-gold-400" />
-                  {t(lang, key)}
-                </Link>
-              ))}
+              {links.map(({ href, key, icon: Icon }) => {
+                const active = pathname === href
+                return (
+                  <Link key={href} href={href} className="relative flex items-center gap-3 rounded-lg px-4 py-3 font-medium hover:bg-sand-100 dark:hover:bg-white/5">
+                    {active && (
+                      <span className="absolute inset-y-1.5 start-0 w-1 rounded-full bg-brand-500 dark:bg-gold-400 dark:shadow-[0_0_12px_2px_rgb(212_175_55/0.6)]" />
+                    )}
+                    <Icon
+                      className={`h-5 w-5 ${
+                        active
+                          ? 'text-brand-700 dark:text-gold-300 dark:drop-shadow-[0_0_8px_rgb(212_175_55/0.7)]'
+                          : 'text-stone-400 dark:text-stone-500'
+                      }`}
+                    />
+                    <span className={active ? 'font-bold text-brand-800 dark:text-gold-300' : 'text-stone-500 dark:text-stone-400'}>
+                      {t(lang, key)}
+                    </span>
+                  </Link>
+                )
+              })}
               <button
                 type="button"
                 onClick={() => {
                   setOpen(false)
                   setAuthOpen(true)
                 }}
-                className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-start font-medium hover:bg-sand-100 dark:hover:bg-brand-900"
+                className="relative mt-4 flex items-center gap-3 rounded-lg px-4 py-3 text-start font-medium hover:bg-sand-100 dark:hover:bg-white/5"
               >
-                <UserRound className="h-5 w-5 text-brand-600 dark:text-gold-400" />
-                {t(lang, 'navProfile')}
+                <UserRound className="h-5 w-5 text-stone-400 dark:text-stone-500" />
+                <span className="text-stone-500 dark:text-stone-400">{t(lang, 'navProfile')}</span>
               </button>
             </nav>
           </aside>
