@@ -9,7 +9,7 @@ export default function ProgressBar({ value, label }: { value: number; label?: s
         <div className="h-full rounded-full bg-brand-500 transition-all dark:bg-gold-400" style={{ width: `${v}%` }} />
       </div>
       {label && (
-        <p className="mt-1 text-xs text-stone-500 dark:text-stone-400">
+        <p className="mt-1 text-xs text-stone-500 dark:text-gold-300/70">
           {label} <span className="num">{v}%</span>
         </p>
       )}

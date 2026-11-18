@@ -32,7 +32,7 @@ export default function TrackPage({ slug }: { slug: string }) {
             </span>
             <div>
               <h1 className="text-2xl font-bold text-brand-900 dark:text-gold-300">{track[lang].title}</h1>
-              <p className="text-sm text-stone-600 dark:text-stone-300">{track[lang].tagline}</p>
+              <p className="text-sm text-stone-600 dark:text-gold-300/80">{track[lang].tagline}</p>
             </div>
           </div>
           <ProgressBar value={(doneCount / track.lessons.length) * 100} label={`${t(lang, 'trackProgress')}: ${doneCount}/${track.lessons.length}`} />
@@ -53,7 +53,7 @@ export default function TrackPage({ slug }: { slug: string }) {
                 </span>
                 <div className="flex-1">
                   <h2 className="font-bold">{lesson[lang].title}</h2>
-                  <p className="line-clamp-1 text-sm text-stone-500 dark:text-stone-400">{lesson[lang].intro}</p>
+                  <p className="line-clamp-1 text-sm text-stone-500 dark:text-gold-300/70">{lesson[lang].intro}</p>
                 </div>
                 {isDone && <CheckCircle2 className="h-5 w-5 shrink-0 text-brand-500 dark:text-gold-400" />}
               </Link>

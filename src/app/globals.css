@@ -1,5 +1,7 @@
 @import 'tailwindcss';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-body: 'Readex Pro Variable', 'Segoe UI', system-ui, sans-serif;
   --font-head: 'Playfair Display Variable', 'Amiri', 'El Messiri', serif;
