@@ -10,6 +10,7 @@ import { sideIncomeLessons2 } from '../content/sideincome2'
 import { businessLessons } from '../content/business'
 import { businessLessons2 } from '../content/business2'
 import { mindsetLessons } from '../content/mindset'
+import { mindsetLessons2 } from '../content/mindset2'
 
 // ==============================================================================
 // Feloosy learning tracks. Every track has real lessons in both languages;
@@ -63,7 +64,7 @@ export const TRACKS: Track[] = [
     image: '/images/track-mindset.jpg',
     ar: { title: 'عقلية الفلوس', tagline: 'العادات، الصبر، وكشف النصب - نص الغنى نفسية' },
     en: { title: 'Money Mindset', tagline: 'Habits, patience and scam-spotting - half of wealth is mental' },
-    lessons: mindsetLessons,
+    lessons: [...mindsetLessons, ...mindsetLessons2],
   },
 ]
 
