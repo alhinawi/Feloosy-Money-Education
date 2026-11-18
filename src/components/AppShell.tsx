@@ -65,7 +65,10 @@ export default function AppShell({ children }: { children: ReactNode }) {
           </button>
           <Link href="/" className="flex items-center gap-2">
             <Logo />
-            <span className="font-head text-xl font-bold text-brand-800 dark:text-gold-300">{t(lang, 'siteName')}</span>
+            <span className="flex flex-col leading-none">
+              <span className="font-head text-xl font-bold text-brand-800 dark:text-gold-300">Feloosy</span>
+              <span className="font-head text-xs text-brand-600 dark:text-gold-300/70">فلوسي</span>
+            </span>
           </Link>
           <nav className="mx-4 hidden flex-1 items-center gap-1 md:flex">
             {links.map(({ href, key }) => (
@@ -95,7 +98,10 @@ export default function AppShell({ children }: { children: ReactNode }) {
             <div className="mb-4 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <Logo />
-                <span className="font-head text-lg font-bold text-brand-800 dark:text-gold-300">{t(lang, 'siteName')}</span>
+                <span className="flex flex-col leading-none">
+              <span className="font-head text-lg font-bold text-brand-800 dark:text-gold-300">Feloosy</span>
+              <span className="font-head text-xs text-brand-600 dark:text-gold-300/70">فلوسي</span>
+            </span>
               </div>
               <button type="button" aria-label={t(lang, 'closeMenu')} onClick={() => setOpen(false)} className="rounded-lg p-2 hover:bg-sand-100 dark:hover:bg-brand-900">
                 <X className="h-5 w-5" />
@@ -137,10 +143,23 @@ export default function AppShell({ children }: { children: ReactNode }) {
 
 function Logo() {
   return (
-    <svg width="30" height="30" viewBox="0 0 32 32" className="drop-shadow-[0_0_18px_rgb(212_175_55/0.45)]" aria-hidden="true">
-      <circle cx="16" cy="16" r="14" fill="#0e3d2c" />
-      <circle cx="16" cy="16" r="13" fill="none" stroke="#c9a227" strokeWidth="1.5" />
-      <path d="M16 8l2.2 4.6 5 .7-3.6 3.5.9 5-4.5-2.4-4.5 2.4.9-5L8.8 13.3l5-.7z" fill="#dfb945" />
+    <svg width="32" height="32" viewBox="0 0 32 32" className="drop-shadow-[0_0_18px_rgb(212_175_55/0.45)]" aria-hidden="true">
+    <circle cx="16" cy="16" r="14.5" fill="#171309" />
+    <circle cx="16" cy="16" r="13.5" fill="none" stroke="#d4af37" strokeWidth="1.2" />
+    <path d="M14.5 13.5c-3-3.2-7.2-4.3-10.3-3.3 2 .6 3.5 1.6 4.5 3.1-1.9-.5-3.4-.4-4.4.2 2.6 1.6 5.2 2.7 8.2 3.2z" fill="#e6c655" />
+    <path d="M17.5 13.5c3-3.2 7.2-4.3 10.3-3.3-2 .6-3.5 1.6-4.5 3.1 1.9-.5 3.4-.4 4.4.2-2.6 1.6-5.2 2.7-8.2 3.2z" fill="#e6c655" />
+    <g transform="rotate(-8 16 17.5)">
+      <rect x="9" y="13.2" width="14" height="8.6" rx="1.6" fill="url(#noteGold)" stroke="#96741a" strokeWidth="0.7" />
+      <circle cx="16" cy="17.5" r="2.4" fill="#c9a227" stroke="#96741a" strokeWidth="0.5" />
+      <path d="M11.4 14.8v5.4M20.6 14.8v5.4" stroke="#96741a" strokeWidth="0.7" />
+    </g>
+    <defs>
+      <linearGradient id="noteGold" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stopColor="#f6e27a" />
+        <stop offset="0.5" stopColor="#e2b93a" />
+        <stop offset="1" stopColor="#b8941f" />
+      </linearGradient>
+    </defs>
     </svg>
   )
 }
