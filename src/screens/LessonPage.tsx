@@ -6,6 +6,8 @@ import { CheckCircle2, ChevronLeft, ChevronRight } from 'lucide-react'
 import { useApp, lessonId } from '../lib/store'
 import { t } from '../lib/i18n'
 import { getLesson } from '../lib/content'
+import { getQuiz } from '../content/quizzes'
+import Quiz from '../components/Quiz'
 import MarkDone from '../components/MarkDone'
 
 export default function LessonPage({ trackSlug, lessonSlug }: { trackSlug: string; lessonSlug: string }) {
@@ -48,6 +50,10 @@ export default function LessonPage({ trackSlug, lessonSlug }: { trackSlug: strin
           ))}
         </ul>
       </div>
+
+      {getQuiz(track.slug, lesson.slug) && (
+        <Quiz id={lessonId(track.slug, lesson.slug)} quiz={getQuiz(track.slug, lesson.slug)!} />
+      )}
 
       <div className="mb-8">
         <MarkDone id={lessonId(track.slug, lesson.slug)} />
