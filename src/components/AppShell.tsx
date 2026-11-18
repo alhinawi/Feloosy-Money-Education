@@ -8,7 +8,7 @@
 import { useEffect, useState, type ReactNode } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X, Home, Layers, Calculator, Info, Settings as SettingsIcon, UserRound } from 'lucide-react'
+import { Menu, X, Home, Layers, Calculator, BookOpenText, Info, Settings as SettingsIcon, UserRound } from 'lucide-react'
 import { useApp } from '../lib/store'
 import { t, dirOf } from '../lib/i18n'
 import { initAuth } from '../lib/auth'
@@ -46,6 +46,7 @@ export default function AppShell({ children }: { children: ReactNode }) {
     { href: '/', key: 'navHome', icon: Home },
     { href: '/tracks/', key: 'navTracks', icon: Layers },
     { href: '/calculators/', key: 'navCalculators', icon: Calculator },
+    { href: '/glossary/', key: 'navGlossary', icon: BookOpenText },
     { href: '/about/', key: 'navAbout', icon: Info },
     { href: '/settings/', key: 'navSettings', icon: SettingsIcon },
   ] as const

@@ -71,3 +71,17 @@ describe('quizzes', () => {
     for (const key of Object.keys(QUIZZES)) expect(valid.has(key), `orphan quiz ${key}`).toBe(true)
   })
 })
+
+describe('glossary', () => {
+  it('has at least 20 terms, each fully bilingual', async () => {
+    const { GLOSSARY } = await import('../content/glossary')
+    expect(GLOSSARY.length).toBeGreaterThanOrEqual(20)
+    for (const term of GLOSSARY) {
+      expect(term.ar.length).toBeGreaterThan(1)
+      expect(term.en.length).toBeGreaterThan(1)
+      expect(term.arBody.length).toBeGreaterThan(40)
+      expect(term.enBody.length).toBeGreaterThan(40)
+    }
+    expect(new Set(GLOSSARY.map((t) => t.en)).size).toBe(GLOSSARY.length)
+  })
+})
