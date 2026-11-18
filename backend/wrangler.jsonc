@@ -11,7 +11,7 @@
     {
       "binding": "DB",
       "database_name": "feloosy",
-      "database_id": "TODO-create-on-deploy",
+      "database_id": "2f7c75f8-fe3b-43f0-9feb-e0f083e0c3f8",
       "migrations_dir": "migrations"
     }
   ]
