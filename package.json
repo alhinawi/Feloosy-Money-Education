@@ -1,0 +1,36 @@
+{
+  "name": "feloosy",
+  "version": "0.1.0",
+  "description": "Trillionaire - learn how money works: saving, budgeting, investing, side income and business, in Egyptian Arabic",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && rm -rf dist && cp -r out dist",
+    "preview": "python3 -m http.server 4173 --directory out",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alhinawi/Trillionaire-Money-Education.git"
+  },
+  "type": "module",
+  "license": "MIT",
+  "dependencies": {
+    "@fontsource-variable/readex-pro": "^5.3.0",
+    "@fontsource/el-messiri": "^5.3.0",
+    "lucide-react": "^1.72.0",
+    "next": "^16.4.6",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "zustand": "^5.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.11",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "tailwindcss": "^4.1.11",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  }
+}
