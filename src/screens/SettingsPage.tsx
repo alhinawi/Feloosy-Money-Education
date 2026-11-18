@@ -24,9 +24,9 @@ export default function SettingsPage() {
 
   return (
     <div className="mx-auto max-w-xl">
-      <h1 className="mb-6 text-3xl font-bold text-palm-900 dark:text-gold-300">{t(lang, 'settingsTitle')}</h1>
+      <h1 className="mb-6 text-3xl font-bold text-brand-900 dark:text-gold-300">{t(lang, 'settingsTitle')}</h1>
 
-      <div className="card mb-4 p-5">
+      <div className="rounded-[1.25rem] border border-border bg-card text-card-foreground shadow-sm mb-4 p-5">
         <h2 className="mb-3 font-bold">{t(lang, 'langLabel')}</h2>
         <div className="flex gap-2">
           {langs.map((l) => (
@@ -35,7 +35,7 @@ export default function SettingsPage() {
               type="button"
               onClick={() => setLang(l.value)}
               className={`rounded-xl px-4 py-2 font-medium ${
-                lang === l.value ? 'bg-palm-700 text-white' : 'bg-sand-100 hover:bg-sand-200 dark:bg-palm-900 dark:hover:bg-palm-800'
+                lang === l.value ? 'bg-brand-700 text-white' : 'bg-sand-100 hover:bg-sand-200 dark:bg-brand-900 dark:hover:bg-brand-800'
               }`}
             >
               {l.label}
@@ -44,7 +44,7 @@ export default function SettingsPage() {
         </div>
       </div>
 
-      <div className="card mb-4 p-5">
+      <div className="rounded-[1.25rem] border border-border bg-card text-card-foreground shadow-sm mb-4 p-5">
         <h2 className="mb-3 font-bold">{t(lang, 'themeLabel')}</h2>
         <div className="flex gap-2">
           {themes.map((th) => (
@@ -53,7 +53,7 @@ export default function SettingsPage() {
               type="button"
               onClick={() => setTheme(th.value)}
               className={`rounded-xl px-4 py-2 font-medium ${
-                theme === th.value ? 'bg-palm-700 text-white' : 'bg-sand-100 hover:bg-sand-200 dark:bg-palm-900 dark:hover:bg-palm-800'
+                theme === th.value ? 'bg-brand-700 text-white' : 'bg-sand-100 hover:bg-sand-200 dark:bg-brand-900 dark:hover:bg-brand-800'
               }`}
             >
               {th.label}
@@ -62,20 +62,20 @@ export default function SettingsPage() {
         </div>
       </div>
 
-      <div className="card mb-4 p-5">
+      <div className="rounded-[1.25rem] border border-border bg-card text-card-foreground shadow-sm mb-4 p-5">
         <h2 className="mb-3 font-bold">{t(lang, 'accountSection')}</h2>
         {user ? (
           <p className="text-sm text-stone-600 dark:text-stone-300">
             {t(lang, 'loggedInAs')} <strong>{user.name}</strong>
           </p>
         ) : (
-          <button type="button" onClick={() => setAuthOpen(true)} className="rounded-xl bg-palm-700 px-4 py-2 font-bold text-white hover:bg-palm-800">
+          <button type="button" onClick={() => setAuthOpen(true)} className="rounded-xl bg-brand-700 px-4 py-2 font-bold text-white hover:bg-brand-800">
             {t(lang, 'login')}
           </button>
         )}
       </div>
 
-      <div className="card p-5">
+      <div className="rounded-[1.25rem] border border-border bg-card text-card-foreground shadow-sm p-5">
         <button
           type="button"
           onClick={() => {

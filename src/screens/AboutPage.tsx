@@ -10,7 +10,7 @@ export default function AboutPage() {
   const { lang } = useApp()
   return (
     <div className="mx-auto max-w-3xl">
-      <h1 className="mb-4 text-3xl font-bold text-palm-900 dark:text-gold-300">{t(lang, 'aboutTitle')}</h1>
+      <h1 className="mb-4 text-3xl font-bold text-brand-900 dark:text-gold-300">{t(lang, 'aboutTitle')}</h1>
       <div className="relative mb-6 overflow-hidden rounded-2xl">
         <Image src="/images/track-mindset.jpg" alt={t(lang, 'imageAlt')} width={1280} height={720} className="h-52 w-full object-cover" />
       </div>
@@ -24,15 +24,15 @@ export default function AboutPage() {
             المحتوى مكتوب بالعامية المصرية وبأمثلة من واقعنا: الشهادات البنكية، الدهب، البورصة المصرية، والفريلانس.
             من غير مصطلحات معقدة ومن غير ما نفترض إن عندك خلفية مالية.
           </p>
-          <div className="card border-r-4 border-r-gold-500 p-5 dark:border-r-gold-400">
-            <h2 className="mb-2 flex items-center gap-2 font-bold text-palm-900 dark:text-gold-300">
+          <div className="rounded-[1.25rem] border border-border bg-card text-card-foreground shadow-sm border-r-4 border-r-gold-500 p-5 dark:border-r-gold-400">
+            <h2 className="mb-2 flex items-center gap-2 font-bold text-brand-900 dark:text-gold-300">
               <ShieldCheck className="h-5 w-5" />
               {t(lang, 'honestyTitle')}
             </h2>
             <p>{t(lang, 'honestyBody')}</p>
           </div>
           <p>
-            <Link href="/tracks/" className="font-bold text-palm-700 hover:underline dark:text-gold-300">
+            <Link href="/tracks/" className="font-bold text-brand-700 hover:underline dark:text-gold-300">
               {t(lang, 'heroCta')} ←
             </Link>
           </p>
@@ -48,15 +48,15 @@ export default function AboutPage() {
             The content uses Egyptian reality for examples: bank certificates, gold, the Egyptian Exchange, and freelancing -
             with no complex jargon and no assumption of a finance background.
           </p>
-          <div className="card border-l-4 border-l-gold-500 p-5 dark:border-l-gold-400">
-            <h2 className="mb-2 flex items-center gap-2 font-bold text-palm-900 dark:text-gold-300">
+          <div className="rounded-[1.25rem] border border-border bg-card text-card-foreground shadow-sm border-l-4 border-l-gold-500 p-5 dark:border-l-gold-400">
+            <h2 className="mb-2 flex items-center gap-2 font-bold text-brand-900 dark:text-gold-300">
               <ShieldCheck className="h-5 w-5" />
               {t(lang, 'honestyTitle')}
             </h2>
             <p>{t(lang, 'honestyBody')}</p>
           </div>
           <p>
-            <Link href="/tracks/" className="font-bold text-palm-700 hover:underline dark:text-gold-300">
+            <Link href="/tracks/" className="font-bold text-brand-700 hover:underline dark:text-gold-300">
               {t(lang, 'heroCta')} →
             </Link>
           </p>
