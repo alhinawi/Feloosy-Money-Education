@@ -8,6 +8,7 @@ import { investingLessons2 } from '../content/investing2'
 import { sideIncomeLessons } from '../content/sideincome'
 import { sideIncomeLessons2 } from '../content/sideincome2'
 import { businessLessons } from '../content/business'
+import { businessLessons2 } from '../content/business2'
 import { mindsetLessons } from '../content/mindset'
 
 // ==============================================================================
@@ -54,7 +55,7 @@ export const TRACKS: Track[] = [
     image: '/images/track-business.jpg',
     ar: { title: 'مشروعك الخاص', tagline: 'من الفكرة للتسعير والتسويق - ابدأ صغير واكبر صح' },
     en: { title: 'Your Own Business', tagline: 'From idea to pricing and marketing - start small, grow right' },
-    lessons: businessLessons,
+    lessons: [...businessLessons, ...businessLessons2],
   },
   {
     slug: 'mindset',
