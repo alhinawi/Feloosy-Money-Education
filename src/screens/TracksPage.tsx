@@ -13,16 +13,16 @@ export default function TracksPage() {
   const Chevron = lang === 'ar' ? ChevronLeft : ChevronRight
   return (
     <div>
-      <h1 className="mb-2 text-3xl font-bold text-palm-900 dark:text-gold-300">{t(lang, 'tracksTitle')}</h1>
+      <h1 className="mb-2 text-3xl font-bold text-brand-900 dark:text-gold-300">{t(lang, 'tracksTitle')}</h1>
       <p className="mb-8 text-stone-600 dark:text-stone-300">{t(lang, 'tracksSubtitle')}</p>
       <div className="flex flex-col gap-4">
         {TRACKS.map((track, i) => (
-          <Link key={track.slug} href={`/tracks/${track.slug}/`} className="card group flex flex-col overflow-hidden transition-shadow hover:shadow-md sm:flex-row">
+          <Link key={track.slug} href={`/tracks/${track.slug}/`} className="rounded-[1.25rem] border border-border bg-card text-card-foreground shadow-sm group flex flex-col overflow-hidden transition-shadow hover:shadow-md sm:flex-row">
             <div className="relative h-40 w-full sm:h-auto sm:w-56">
               <Image src={track.image} alt={t(lang, 'imageAlt')} width={1280} height={720} className="h-full w-full object-cover" />
             </div>
             <div className="flex flex-1 items-center gap-4 p-4">
-              <span className="rounded-xl bg-palm-100 p-3 text-palm-700 dark:bg-palm-900 dark:text-gold-300">
+              <span className="rounded-xl bg-brand-100 p-3 text-brand-700 dark:bg-brand-900 dark:text-gold-300">
                 <TrackIcon icon={track.icon} />
               </span>
               <div className="flex-1">

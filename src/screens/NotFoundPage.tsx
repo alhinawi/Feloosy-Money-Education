@@ -11,7 +11,7 @@ export default function NotFoundPage() {
       <p className="num mb-2 text-6xl font-bold text-gold-500">404</p>
       <h1 className="mb-2 text-2xl font-bold">{t(lang, 'notFoundTitle')}</h1>
       <p className="mb-6 text-stone-600 dark:text-stone-300">{t(lang, 'notFoundBody')}</p>
-      <Link href="/" className="rounded-xl bg-palm-700 px-6 py-3 font-bold text-white hover:bg-palm-800">
+      <Link href="/" className="rounded-xl bg-brand-700 px-6 py-3 font-bold text-white hover:bg-brand-800">
         {t(lang, 'navHome')}
       </Link>
     </div>

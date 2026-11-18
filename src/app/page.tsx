@@ -8,6 +8,7 @@ import { t } from '../lib/i18n'
 import { TRACKS, ALL_LESSONS } from '../lib/content'
 import TrackIcon from '../components/TrackIcon'
 import ProgressBar from '../components/ProgressBar'
+import { Button } from '../components/ui/button'
 
 export default function HomePage() {
   const { lang, done } = useApp()
@@ -24,20 +25,17 @@ export default function HomePage() {
     <div className="flex flex-col gap-12">
       <section className="grid items-center gap-6 md:grid-cols-2">
         <div>
-          <h1 className="mb-4 text-3xl font-bold leading-snug text-palm-900 dark:text-gold-300 md:text-4xl">
+          <h1 className="mb-4 bg-[linear-gradient(100deg,#a8851c_0%,#d4af37_35%,#f6e27a_55%,#d4af37_75%,#a8851c_100%)] bg-clip-text text-transparent dark:bg-[linear-gradient(100deg,#c9a227_0%,#f1dc8f_35%,#fff3c4_55%,#f1dc8f_75%,#c9a227_100%)] text-3xl font-bold leading-snug md:text-4xl">
             {t(lang, 'heroTitle')}
           </h1>
           <p className="mb-6 leading-relaxed text-stone-600 dark:text-stone-300">{t(lang, 'heroSubtitle')}</p>
           <div className="flex flex-wrap gap-3">
-            <Link href="/tracks/" className="rounded-xl bg-palm-700 px-6 py-3 font-bold text-white hover:bg-palm-800">
-              {t(lang, 'heroCta')}
-            </Link>
-            <Link
-              href="/calculators/"
-              className="rounded-xl border-2 border-palm-700 px-6 py-3 font-bold text-palm-700 hover:bg-palm-50 dark:border-gold-400 dark:text-gold-300 dark:hover:bg-palm-900"
-            >
-              {t(lang, 'heroSecondary')}
-            </Link>
+            <Button asChild size="lg">
+              <Link href="/tracks/">{t(lang, 'heroCta')}</Link>
+            </Button>
+            <Button asChild size="lg" variant="outline">
+              <Link href="/calculators/">{t(lang, 'heroSecondary')}</Link>
+            </Button>
           </div>
           {doneCount > 0 && (
             <div className="mt-6 max-w-xs">
@@ -48,19 +46,19 @@ export default function HomePage() {
             </div>
           )}
         </div>
-        <div className="relative overflow-hidden rounded-3xl border border-sand-200 shadow-lg dark:border-palm-800">
+        <div className="relative overflow-hidden rounded-3xl border border-gold-500 shadow-[0_0_0_4px_rgb(212_175_55/0.12),0_12px_32px_rgb(104_77_23/0.18)] dark:shadow-[0_0_0_4px_rgb(212_175_55/0.15),0_12px_32px_rgb(0_0_0/0.5)]">
           <Image src="/images/hero.jpg" alt={t(lang, 'imageAlt')} width={1280} height={720} className="h-auto w-full" priority />
         </div>
       </section>
 
       <section>
-        <h2 className="mb-2 text-2xl font-bold text-palm-900 dark:text-gold-300">{t(lang, 'tracksTitle')}</h2>
+        <h2 className="mb-2 text-2xl font-bold text-brand-900 dark:text-gold-300">{t(lang, 'tracksTitle')}</h2>
         <p className="mb-6 text-stone-600 dark:text-stone-300">{t(lang, 'tracksSubtitle')}</p>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {TRACKS.map((track) => {
             const trackDone = track.lessons.filter((l) => done.includes(lessonId(track.slug, l.slug))).length
             return (
-              <Link key={track.slug} href={`/tracks/${track.slug}/`} className="card group overflow-hidden transition-shadow hover:shadow-md">
+              <Link key={track.slug} href={`/tracks/${track.slug}/`} className="rounded-[1.25rem] border border-border bg-card text-card-foreground shadow-sm group overflow-hidden transition-shadow hover:shadow-md">
                 <div className="relative h-36 w-full overflow-hidden">
                   <Image
                     src={track.image}
@@ -72,7 +70,7 @@ export default function HomePage() {
                 </div>
                 <div className="p-4">
                   <div className="mb-2 flex items-center gap-2">
-                    <span className="rounded-lg bg-palm-100 p-2 text-palm-700 dark:bg-palm-900 dark:text-gold-300">
+                    <span className="rounded-lg bg-brand-100 p-2 text-brand-700 dark:bg-brand-900 dark:text-gold-300">
                       <TrackIcon icon={track.icon} className="h-5 w-5" />
                     </span>
                     <h3 className="text-lg font-bold">{track[lang].title}</h3>
@@ -82,7 +80,7 @@ export default function HomePage() {
                     <span className="text-stone-500">
                       <span className="num">{track.lessons.length}</span> {t(lang, 'lessons')}
                     </span>
-                    <span className="font-bold text-palm-700 dark:text-gold-300">
+                    <span className="font-bold text-brand-700 dark:text-gold-300">
                       {trackDone > 0 ? `${t(lang, 'continue')} (${trackDone}/${track.lessons.length})` : t(lang, 'start')}
                     </span>
                   </div>
@@ -94,10 +92,10 @@ export default function HomePage() {
       </section>
 
       <section>
-        <h2 className="mb-6 text-2xl font-bold text-palm-900 dark:text-gold-300">{t(lang, 'principlesTitle')}</h2>
+        <h2 className="mb-6 text-2xl font-bold text-brand-900 dark:text-gold-300">{t(lang, 'principlesTitle')}</h2>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {principles.map(({ icon: Icon, title, body }) => (
-            <div key={title} className="card p-5">
+            <div key={title} className="rounded-[1.25rem] border border-border bg-card text-card-foreground shadow-sm p-5">
               <span className="mb-3 inline-block rounded-xl bg-gold-300/30 p-2.5 text-gold-600 dark:text-gold-300">
                 <Icon className="h-6 w-6" />
               </span>
@@ -108,8 +106,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="card border-r-4 border-r-gold-500 p-6 dark:border-r-gold-400" aria-label={t(lang, 'honestyTitle')}>
-        <h2 className="mb-2 flex items-center gap-2 text-xl font-bold text-palm-900 dark:text-gold-300">
+      <section className="rounded-[1.25rem] border border-border bg-card text-card-foreground shadow-sm border-r-4 border-r-gold-500 p-6 dark:border-r-gold-400" aria-label={t(lang, 'honestyTitle')}>
+        <h2 className="mb-2 flex items-center gap-2 text-xl font-bold text-brand-900 dark:text-gold-300">
           <ShieldCheck className="h-6 w-6" />
           {t(lang, 'honestyTitle')}
         </h2>
